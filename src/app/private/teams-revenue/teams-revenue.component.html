@@ -1,0 +1,25 @@
+
+<header> 
+<app-header></app-header> 
+</header> 
+<div class="container"> 
+<br><br>
+<div [formGroup]="parentFormGroup"> 
+<div formArrayName="teamArray"> 
+<div *ngFor="let team of teamArray.controls; index as i" (click)="Edit(i,team)"> 
+<div class="main"> 
+
+{{teams[i].team_name}} 
+<span class="totalcost"> 
+{{teams[i].amount | currency:'USD'}} 
+</span> 
+</div> 
+
+
+</div> 
+</div> 
+</div> 
+</div> 
+<footer> 
+<app-footer></app-footer> 
+</footer>

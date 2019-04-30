@@ -1,0 +1,42 @@
+
+.container{
+    width: 100%;
+    height: 100%;
+    margin-top: 109px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card{
+    /* width: 60vw;
+    height: 53vh; */
+    box-shadow: 3px 3px 5px #ccc;
+    padding: 2vw;
+    text-align: center;
+}
+.form-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.form-wrapper .mat-form-field:nth-child(2) {
+    margin-top: 25px;
+}
+.full-width{
+    width: 400px;
+}
+.heading{
+    color: #777;
+    letter-spacing: 1.5px;
+    font-size: 32px;
+}
+button{
+    width: 214px;
+    height: 40px;
+    background-color: blue;
+    border: 2px solid blue;
+    border-radius: 10px;
+    color: white;
+
+} 

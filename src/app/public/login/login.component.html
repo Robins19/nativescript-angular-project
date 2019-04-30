@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="card">
+    <h2 class="heading">Sales Master</h2>
+    <img src="assets/favicon32x32.png"  style="height: 133px;
+    padding-left: 135px;
+    padding-right: 116px;">
+    <form class="loginForm">
+      <div class="form-wrapper">
+        <div class="full-width">
+          <input type="text"  placeholder="Email" [formControl]="email">
+          <div *ngIf="email.hasError('email') && !email.hasError('required')">
+            Please enter a valid email address
+          </div>
+          <div *ngIf="email.hasError('required')">
+            Email is <strong>required</strong>
+          </div>
+        </div>
+
+        <div class="full-width">
+          <input type="password"  placeholder="Password" [formControl]="password">
+          <div *ngIf="password.hasError('required')">
+            Password is <strong>required</strong>
+          </div>
+        </div>
+        <br>
+        <button style="font-size: 20px;"  color="primary" (click)="login()">Login</button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,47 @@
+<ul class="nav nav-pills">
+    <li class="nav-item">
+      <a class="nav-link " >Sales Master App</a>
+    </li>
+    <li  class="nav-item dropdown" >
+      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"></a>
+      <div  class="dropdown-menu">
+        <a class="dropdown-item" routerLinkActive="active" routerLink="/profile" > </a>
+        <!-- here i display number of dropdown menu of Add nd logout -->
+        <a class="dropdown-item" (click)="Back()">Back</a>
+          <a class="dropdown-item" (click)="logout()">Logout</a>
+      </div>
+    </li>
+  </ul>
+
+<div class="addform-div">
+  <h2>Edit Record</h2>
+<form class="container" [formGroup]= " forms" (ngSubmit)= "updateTeam(forms.value)" style="box-shadow: 0 0 10px gray ">
+    <label>
+        Team Name<br>
+             <input  placeholder="Team Name" name="name" formControlName = "name" >
+       </label>
+       <!-- here i used name validation -->
+           <div *ngIf="forms.get('name').invalid && (forms.get('name').dirty || forms.get('name').touched)"
+                class="alert">
+                 <div *ngIf="forms.get('name').errors.required">
+                   Team name is required.
+                 </div>
+                 <div *ngIf="!forms.get('email').errors.required">
+                  Team name  is invalid.
+                 </div>
+           </div><br>
+           <label>
+             <!-- here i used amount validation -->
+              AMOUNT<br>
+              <input  placeholder="amount" name="revenue" formControlName = "revenue" >
+            </label>
+            <div *ngIf="forms.get('revenue').invalid && (forms.get('revenue').dirty || forms.get('revenue').touched)"
+              class="alert">
+              <div *ngIf="forms.get('revenue').errors.required">
+                amount is required.
+              </div>
+            </div>
+            <!-- here is our add button -->
+            <button type = "submit"  value="submit">Edit</button><br>
+            </form>
+            </div>

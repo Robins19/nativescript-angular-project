@@ -2,7 +2,6 @@ import { Component, ViewChild, OnInit } from '@angular/core';
 import { TeamService } from '/home/robins/Desktop/native-project/src/app/team.service';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl, FormArray, FormBuilder, Validators } from '@angular/forms';
-import { DeleteRecordComponent } from '../delete-record/delete-record.component';
 
 @Component({
   selector: 'app-teams',
@@ -17,6 +16,8 @@ export class TeamsComponent implements OnInit {
   });
   totalAmount: any;
   dialog: any;
+  data: any;
+  index: any;
 
   constructor(public teamService: TeamService,
     public router: Router,
@@ -72,6 +73,21 @@ export class TeamsComponent implements OnInit {
       this.router.navigate(['add-new-record']);
   }
 
+  delete(index, team) {
+
+
+      this.teamService.id =  this.teams[index].team_id;
+      const data = {
+        team_id: this.teamService.id,
+      };
+
+      this.teamService.deleteTeam(data).subscribe(response => {
+        console.log(response);
+        if (response && response.status === 200) {
+          this.getTeams();
+        }
+      });
+    }
 
 
 }

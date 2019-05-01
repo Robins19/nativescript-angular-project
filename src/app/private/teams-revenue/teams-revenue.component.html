@@ -1,25 +1,27 @@
-
-<header> 
-<app-header></app-header> 
-</header> 
-<div class="container"> 
-<br><br>
-<div [formGroup]="parentFormGroup"> 
-<div formArrayName="teamArray"> 
-<div *ngFor="let team of teamArray.controls; index as i" (click)="Edit(i,team)"> 
-<div class="main"> 
-
-{{teams[i].team_name}} 
-<span class="totalcost"> 
-{{teams[i].amount | currency:'USD'}} 
-</span> 
-</div> 
+<app-header></app-header>
+<div *ngFor="let team of teamArray.controls; let i =index;"> 
 
 
-</div> 
-</div> 
-</div> 
-</div> 
-<footer> 
-<app-footer></app-footer> 
-</footer>
+        <div class="container "> 
+        <div class="panel-group" id="faqAccordion"> 
+        <div class="panel panel-default "> 
+        <div class="panel-heading accordion-toggle question-toggle collapsed" data-toggle="collapse" data-parent="#faqAccordion" [attr.data-target]="'#question'+i"> 
+        <h4 class="panel-title"> 
+        {{teams[i].team_name}}<span>{{teams[i].amount | currency:'USD'}}</span> 
+        </h4> 
+        
+        </div> 
+        <div [attr.id]="'question'+i" class="panel-collapse collapse" style="height: 0px;"> 
+        <div class="panel-body"> 
+        
+        <button type="submit" (click)="Edit(i,team)" >Edit</button> 
+        <!--<button class="btn btn-lg btn-outline-primary" (click)="open()">Launch demo modal</button> --> 
+        <button type="submit" (click)="delete(i, team)">Delete</button> 
+        </div> 
+        </div> 
+        </div> 
+        </div> 
+        </div> 
+        </div> 
+        <app-footer></app-footer> 
+        <!-- <div> <h4>Total amount</h4><span>{{totalAmount | currency:'USD'}}</span></div> -->

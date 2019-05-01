@@ -13,8 +13,8 @@
     </li>
   </ul>
 <div class="addform-div">
-  <h2>Add New Record</h2>
-<form class="container" [formGroup]= " forms" (ngSubmit)= " addTeam(forms.value)" style="box-shadow: 0 0 10px gray ">
+  <h2 style="text-align: center">Add New Record</h2>
+<form class="container" [formGroup]= " forms" (ngSubmit)= " addTeam(forms.value)" style="box-shadow: 0 0 5px gray ">
     <label>
         Team Name<br>
              <input  placeholder="Team Name" name="name" formControlName = "name">
@@ -39,7 +39,7 @@
               <div *ngIf="forms.get('revenue').errors.required">
                 amount is required.
               </div>
-            </div>
+            </div><br>
             <!-- here is our add button -->
             <button type = "submit"  value="submit">Add</button><br>
             </form>

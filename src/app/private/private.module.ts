@@ -7,12 +7,11 @@ import { PrivateRoutingModule } from './private-routing.module';
 import {TeamsComponent } from './teams-revenue/teams-revenue.component';
 import { AddNewRecordComponent } from './add-new-record/add-new-record.component';
 import { EditRecordComponent } from './edit-record/edit-record.component';
-import { DeleteRecordComponent } from './delete-record/delete-record.component';
 import { HeaderComponent } from '../header/header.component';
 import { FooterComponent } from '../footer/footer.component';
 
 @NgModule({
-  declarations: [TeamsComponent, HeaderComponent,FooterComponent, AddNewRecordComponent, EditRecordComponent, DeleteRecordComponent],
+  declarations: [TeamsComponent, HeaderComponent, FooterComponent, AddNewRecordComponent, EditRecordComponent],
   imports: [
     CommonModule,
     PrivateRoutingModule,
